@@ -1,2 +1,4 @@
 Question 1: Who is the most senior staff?
 Question 2: Which country is the highest invoice?
+Questoin 3: Describe Top 3 value of total invoice.
+Questoin 4: Describe city that spend the most.

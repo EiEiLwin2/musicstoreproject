@@ -12,3 +12,6 @@ select * from invoice;
 select count(*) As total_invoices, billing_country from invoice group by billing_country ORDER BY billing_country DESC;
 #for question 3
 select total as total from invoice  order by total DESC Limit 3;
+select * from invoice;
+#result for city that highest sale.
+select billing_city,sum(total) as amount_spend from invoice group by billing_city order by amount_spend DESC limit 1;
