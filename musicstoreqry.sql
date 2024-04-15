@@ -15,3 +15,6 @@ select total as total from invoice  order by total DESC Limit 3;
 select * from invoice;
 #result for city that highest sale.
 select billing_city,sum(total) as amount_spend from invoice group by billing_city order by amount_spend DESC limit 1;
+select * from customer;
+select c.first_name,c.last_name, i.sum(total) from customer
+left join on c.customer_id=i.customer_id where i.sum(total)
