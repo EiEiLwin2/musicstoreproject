@@ -7,3 +7,6 @@ select * from genre;
 select * from employee limit 3; # to know about column
 #query
 select CONCAT(first_name,' ',last_name), title  from employee order by levels DESC limit 1;
+#for question 2
+select * from invoice;
+select count(*) As total_invoices, billing_country from invoice group by billing_country ORDER BY billing_country DESC;
