@@ -36,3 +36,18 @@ Join track t ON  t.track_id=l.track_id
 Join genre g ON t.genre_id=g.genre_id
 where g.name = 'Rock'
 Order by c.email;
+select * from track;
+select * from artist;
+select * from album;
+select name from artist;
+select * from invoice_line;
+select  (A.name) as ArtistName,count(p.playlist_id) as total_track_count
+From artist A
+Inner Join album AL ON A.artist_id=AL.artist_id
+INNER JOIN track T ON AL.album_id=T.album_id
+INNER JOIN playlist_track P ON T.track_id=P.track_id
+INNER JOIN genre G ON T.genre_id=G.genre_id
+WHERE G.name='Rock'
+GROUP BY A.name
+ORDER BY total_track_count DESC
+LIMIT 10;

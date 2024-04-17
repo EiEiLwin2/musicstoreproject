@@ -3,3 +3,5 @@ Question 2: Which country is the highest invoice?
 Questoin 3: Describe Top 3 value of total invoice.
 Questoin 4: Describe city that spend the most.
 Question 5: Who spend the most of our music store?
+Question 6: Who is big audience of Rock music?
+Question 7: Which artist write the most Rock music?
