@@ -57,3 +57,13 @@ select name,milliseconds from track
 where milliseconds > (Select AVG(milliseconds) from track)
 group by name,milliseconds
 order by milliseconds DESC limit 10;
+#Question 9 
+select Concat(c.first_name,' ',c.last_name) as customer,ar.name as artistname,sum(AL.unit_price * AL.quantity)as total_spend
+ from customer c
+Inner Join invoice i on c.customer_id=i.customer_id
+Inner Join invoice_line AL ON i.invoice_id=AL.invoice_id
+Inner Join track T ON T.track_id=AL.track_id
+Inner Join album A ON A.album_id=T.album_id
+INNER JOIN artist ar ON ar.artist_id=A.artist_id
+GROUP BY customer,artistname
+ORDER BY total_spend DESC Limit 10;
