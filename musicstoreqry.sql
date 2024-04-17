@@ -41,6 +41,7 @@ select * from artist;
 select * from album;
 select name from artist;
 select * from invoice_line;
+#Question 7 result retriving
 select  (A.name) as ArtistName,count(p.playlist_id) as total_track_count
 From artist A
 Inner Join album AL ON A.artist_id=AL.artist_id
@@ -51,3 +52,8 @@ WHERE G.name='Rock'
 GROUP BY A.name
 ORDER BY total_track_count DESC
 LIMIT 10;
+#Question 8. Song length than average song length.
+select name,milliseconds from track
+where milliseconds > (Select AVG(milliseconds) from track)
+group by name,milliseconds
+order by milliseconds DESC limit 10;
